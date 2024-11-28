@@ -1,0 +1,11 @@
+{
+    "list_of_statements": [
+        {
+            "verbatim_text": "The exact text from the document that has compliance issues",
+            "risk_level": "high|medium",
+            "risk_reason": "Explanation of how this violates or diverges from the regulatory requirements",
+            "lower_risk_text_suggestion": "Suggested revision to achieve compliance",
+            "page_location": "int"
+        }
+    ]
+}
