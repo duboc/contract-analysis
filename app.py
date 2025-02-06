@@ -15,8 +15,8 @@ import base64
 from utils.logging_utils import log_api_interaction, format_json
 
 # Variables
-PROJECT_ID = "your-project-id"
-REGION = "your-region"
+PROJECT_ID = "conventodapenha"
+REGION = "us-central1"
 
 custom_css = """
 <style>

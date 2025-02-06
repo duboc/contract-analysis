@@ -1,0 +1,8 @@
+vertexai
+streamlit
+streamlit_pdf_viewer
+streamlit_scrollable_textbox
+pandas
+polars
+PyPDF2
+python-dotenv
