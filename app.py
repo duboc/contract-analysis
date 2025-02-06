@@ -13,10 +13,15 @@ from textwrap import fill
 import PyPDF2
 import base64
 from utils.logging_utils import log_api_interaction, format_json
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Variables
-PROJECT_ID = "conventodapenha"
-REGION = "us-central1"
+PROJECT_ID = os.getenv("VERTEX_PROJECT_ID")
+REGION = os.getenv("VERTEX_REGION")
 
 custom_css = """
 <style>

@@ -1,19 +1,22 @@
 # Contract Analysis Application
 
-A powerful tool for analyzing and extracting information from contracts using advanced language models and natural language processing techniques.
+A powerful tool for analyzing contracts against regulatory requirements using Google's Vertex AI and Streamlit. The application helps identify potential risks and suggests improvements based on regulatory guidelines.
 
 ## Features
 
-- Contract text extraction from PDF documents
-- Intelligent contract analysis and information extraction
-- Question-answering capabilities about contract contents
-- Support for multiple document formats
-- Clean and intuitive user interface
+- PDF contract analysis with page-by-page tracking
+- Regulatory compliance checking
+- Risk level assessment (High/Medium)
+- Suggested improvements for risky clauses
+- Reference document management
+- Interactive PDF viewing
+- API interaction logging
+- Clean and intuitive Streamlit interface
 
 ## Prerequisites
 
 - Python 3.8 or higher
-- Node.js and npm (for the frontend)
+- Google Cloud Platform account with Vertex AI API enabled
 - Required Python packages (see `requirements.txt`)
 
 ## Installation
@@ -29,33 +32,49 @@ cd contract-analysis
 pip install -r requirements.txt
 ```
 
-3. Install frontend dependencies:
-```bash
-cd frontend
-npm install
-```
+3. Set up environment variables:
+   - Copy `.env.example` to create your own `.env` file:
+   ```bash
+   cp .env.example .env
+   ```
+   - Edit `.env` with your configuration:
+   ```
+   VERTEX_PROJECT_ID=your-project-id-here
+   VERTEX_REGION=your-region-here
+   ```
 
 ## Usage
 
-1. Start the backend server:
+1. Place your contract PDFs in the `data/` directory
+2. Place reference regulatory documents in the `docs/` directory
+3. Start the Streamlit application:
 ```bash
-python app.py
+streamlit run app.py
 ```
-
-2. Access the application through your web browser at `http://localhost:5000`
-
-3. Upload a contract document and start analyzing!
+4. Access the application through your web browser at the URL shown in the terminal (typically `http://localhost:8501`)
 
 ## Project Structure
 
 ```
 contract-analysis/
-├── app.py              # Main Flask application
-├── frontend/          # Frontend React application
-├── static/           # Static assets
-├── templates/        # HTML templates
-└── requirements.txt  # Python dependencies
+├── app.py                    # Main Streamlit application
+├── services/                 # Service modules
+│   └── vertex_service.py     # Vertex AI integration
+├── utils/                    # Utility functions
+│   └── logging_utils.py      # Logging utilities
+├── prompts/                  # Analysis prompts
+│   ├── regulatory_analysis.md
+│   └── reference_analysis.md
+├── data/                     # Contract documents
+├── docs/                     # Regulatory reference documents
+├── .env.example             # Environment variables template
+└── requirements.txt         # Python dependencies
 ```
+
+## Environment Variables
+
+- `VERTEX_PROJECT_ID`: Your Google Cloud Project ID
+- `VERTEX_REGION`: The region for Vertex AI services (e.g., us-central1)
 
 ## Contributing
 

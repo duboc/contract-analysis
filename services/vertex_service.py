@@ -37,7 +37,7 @@ class VertexService:
     def analyze_document(self, text: str, schema: dict) -> tuple[bool, dict, str]:
         try:
             model = GenerativeModel(
-                model_name="gemini-1.5-pro",
+                model_name="gemini-2.0-flash-001",
                 generation_config=GenerationConfig(**self.generation_config),
                 safety_settings=self.safety_settings
             )
